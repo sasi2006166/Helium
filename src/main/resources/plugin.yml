@@ -1,0 +1,7 @@
+name: Helium
+version: ${project.version}
+main: me.candiesjar.helium.Helium
+api-version: 1.17
+authors: [ CandiesJar ]
+description: Main plugin for future test server(s)
+website: github.com/sasi2006166
