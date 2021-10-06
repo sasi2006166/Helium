@@ -5,3 +5,13 @@ api-version: 1.17
 authors: [ CandiesJar ]
 description: Main plugin for future test server(s)
 website: github.com/sasi2006166
+
+commands:
+  helium:
+    description: Main plugin command.
+    aliases:
+      - "die"
+      - "fly"
+      - "ping"
+      - "gm"
+      - "helium"

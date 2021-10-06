@@ -1,0 +1,16 @@
+MESSAGES:
+  not_player: "&cYou're not a player."
+  reload: "&7Plugin reloaded &asuccessfully&7!"
+  no_permission: "&cI'm sorry, you are lacking the permission %permission%"
+  arguments: "&cParameters are not correct."
+  gamemode_update: "&7Your gamemode has been updated to &b%gamemode%"
+  ping: "&7Your ping is: &b%ping%"
+  die_message: "&7You killed yourself!"
+  spawn_configurated: "&7Spawn point has been &bconfigurated&7!"
+  command:
+    - ""
+    - "&7Running &fHelium 1.0 &7by &bCandiesJar"
+    - ""
+    - "&c&lYou're an administrator."
+    - ""
+    - "&7/helium setspawn - Configure spawn point."

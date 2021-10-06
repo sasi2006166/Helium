@@ -1,30 +1,43 @@
 package me.candiesjar.helium;
 
+import me.candiesjar.helium.commands.CommandManager;
+import me.candiesjar.helium.utils.ConfigManager;
+import me.candiesjar.helium.workloads.WorkloadThread;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Objects;
 
 public final class Helium extends JavaPlugin {
 
     private static Helium instance;
+    private final ConfigManager configManager = new ConfigManager();
+    private WorkloadThread workloadThread;
 
     public static Helium getInstance() {
         return instance;
+    }
+    public WorkloadThread getWorkloadThread() {
+        return workloadThread;
     }
 
     @Override
     public void onEnable() {
 
-        // CONFIGURATION AND INSTANCE
-        getLogger().info("§7[§a✔§7] Starting plugin §7[§a✔§7]");
         instance = this;
-        saveDefaultConfig();
+        createConfigurations();
+        Objects.requireNonNull(getCommand("helium")).setExecutor(new CommandManager());
 
+        workloadThread = new WorkloadThread();
+        Bukkit.getScheduler().runTaskTimer(this, workloadThread, 5L, 1L);
 
-        // Plugin startup logic
-
+        getLogger().info("§7[§a✔§7] Loaded successfully §7[§a✔§7]");
     }
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
+
+    private void createConfigurations() {
+        configManager.create("config.yml");
+        configManager.create("messages.yml");
+        configManager.create("spawn.yml");
     }
 }

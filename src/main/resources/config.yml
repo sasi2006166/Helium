@@ -1,0 +1,13 @@
+HELIUM:
+  commands:
+    gamemode:
+      enabled: true
+      tab_complete: true
+
+
+  command_permission: "helium.admin"
+  gamemode_permission: "helium.gamemode"
+  die_permission: "helium.die"
+
+  general:
+    teleport_on_spawn: true
